@@ -85,6 +85,38 @@
 	</div>
 	<script>
 	  // your solution here
+var press = document.getElementById('press-box');
+var rotate = document.getElementById('rotate-box');
+var pinch = document.getElementById('pinch-box');
+var pan = document.getElementById('pan-box');
+var tap = document.getElementById('tap-box');
+var swipe = document.getElementById('swipe-box');
+    
+
+Hammer(press).on("press", function(ev) {
+      press.textContent = ev.type +" gesture detected.";
+})
+
+var h = new Hammer(rotate);
+h.get('rotate').set({ enable: true });    
+h.on("rotate", function(ev) {
+      rotate.textContent = ev.type +" gesture detected.";
+})
+    
+var p = new Hammer(pinch);
+p.get('pinch').set({ enable: true });    
+p.on("pinch", function(ev) {
+      pinch.textContent = ev.type +" gesture detected.";
+})
+Hammer(pan).on("pan", function(ev) {
+      pan.textContent = ev.type +" gesture detected.";
+})
+Hammer(tap).on("tap", function(ev) {
+      tap.textContent = ev.type +" gesture detected.";
+})
+Hammer(swipe).on("swipe", function(ev) {
+      swipe.textContent = ev.type +" gesture detected.";
+})
   </script>
 </body>
 </html>
